@@ -43,6 +43,8 @@ public class SpecimenBlueV1 extends OpMode {
                                 new Pose(29.000, 41.000)
                         )
                 )
+                // oh yeah baby
+                //.setCustomHeadingInterpolation(t -> )
                 .setLinearHeadingInterpolation(Math.toRadians(0), Math.toRadians(-45))
                 .addParametricCallback(0.6, () -> robot.extension.setTargetInches(12))
                 .addParametricCallback(0.6, () -> robot.intake.setTurretPos(INTAKE_TURRET_DEFAULT))
@@ -50,7 +52,7 @@ public class SpecimenBlueV1 extends OpMode {
                 .addParametricCallback(0.7, () -> robot.intake.setElbowIntakePos(INTAKE_ELBOW_DOWN))
                 //.setZeroPowerAccelerationMultiplier()
                 .setPathEndTimeoutConstraint(0.99)
-                .setZeroPowerAccelerationMultiplier(10)
+                .setNoDeceleration()
 
                 .build();
         moveSample1 = follower.pathBuilder()
@@ -63,7 +65,7 @@ public class SpecimenBlueV1 extends OpMode {
                 )
                 .setLinearHeadingInterpolation(Math.toRadians(-45), Math.toRadians(-130))
                 .setPathEndTimeoutConstraint(0.99)
-                .setZeroPowerAccelerationMultiplier(10)
+                .setNoDeceleration()
                 .build();
         // TODO: test this, it could be more accurate with p2p
 //        align = new PathBuilder()
@@ -81,7 +83,7 @@ public class SpecimenBlueV1 extends OpMode {
                 .addParametricCallback(0.3, () -> robot.intake.setElbowIntakePos(INTAKE_ELBOW_DOWN))
                 .setLinearHeadingInterpolation(Math.toRadians(-130), Math.toRadians(-45))
                 .setPathEndTimeoutConstraint(0.99)
-                .setZeroPowerAccelerationMultiplier(10)
+                .setNoDeceleration()
                 .build();
         moveSample2 = follower.pathBuilder()
                 .addPath(
@@ -104,7 +106,7 @@ public class SpecimenBlueV1 extends OpMode {
                 .addParametricCallback(0.3, () -> robot.intake.setElbowIntakePos(INTAKE_ELBOW_DOWN))
                 .setLinearHeadingInterpolation(Math.toRadians(-130), Math.toRadians(-45))
                 .setPathEndTimeoutConstraint(0.99)
-                .setZeroPowerAccelerationMultiplier(10)
+                .setNoDeceleration()
                 .build();
         grabSpec1 = follower.pathBuilder()
                 .addPath(
